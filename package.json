@@ -1,0 +1,24 @@
+{
+  "name": "food-villa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html --port 8081"
+  },
+  "author": "Khaliq Ansari",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "notistack": "^3.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  }
+}
