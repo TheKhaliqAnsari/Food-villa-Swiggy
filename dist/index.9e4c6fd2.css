@@ -15,7 +15,7 @@ li {
   list-style: none;
 }
 
-.nav-bar > img {
+.nav-bar > a > img {
   width: auto;
   height: 60px;
 }
@@ -41,6 +41,15 @@ li {
 
 .restaurant-card-container img {
   height: 350px;
+}
+
+.menu-container {
+  flex-direction: row;
+  display: flex;
+}
+
+.menu-container img {
+  width: 80%;
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

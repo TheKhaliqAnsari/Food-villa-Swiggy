@@ -16,7 +16,7 @@ li{
     text-decoration: none;
 }
 
-.nav-bar > img{
+.nav-bar > a >img{
     height: 60px;
     width: auto;
 }
@@ -44,4 +44,12 @@ li{
 
 .restaurant-card-container img{
     height: 350px;
+}
+
+.menu-container{
+    display: flex;
+    flex-direction: row;
+}
+.menu-container img{
+    width: 80%;
 }

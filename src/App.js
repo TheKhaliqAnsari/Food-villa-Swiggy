@@ -1,17 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
-import RetaurantBody from "./components/RetaurantBody";
+import RestaurantBody from "./components/RestaurantBody";
 import About from "./components/About";
 import Error from "./components/Error";
+import Footer from "./components/Footer";
+
+import RestaurantMenu from "./components/RestaurantMenu";
+
 import { SnackbarProvider } from "notistack";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const App = () => {
   return (
     <>
       <Header />
-      <RetaurantBody />
+      {/* */}
+      <Outlet />
+      <Footer />
     </>
   );
 };
@@ -20,12 +26,22 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <Error/>
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <RestaurantBody />,
+      },
+      {
+        path: "/about-us",
+        element: <About />,
+      },
+      {
+        path: "/restaurant-menu/:id",
+        element: <RestaurantMenu />,
+      },
+    ],
   },
-  {
-    path:'/about-us',
-    element:<About />
-  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

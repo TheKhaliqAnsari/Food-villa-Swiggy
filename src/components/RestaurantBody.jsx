@@ -4,9 +4,9 @@ import { config } from "../constants"
 import axios from "axios";
 import { enqueueSnackbar, useSnackbar } from "notistack";
 
-function RetaurantBody() {
-    const [restaurantData, setRestaurantData] = useState();
-    const [filteredRestautandData, setfilteredRestautandData] = useState();
+function RestaurantBody() {
+    const [restaurantData, setRestaurantData] = useState([]);
+    const [filteredRestautandData, setfilteredRestautandData] = useState([]);
     const [search, setSearch] = useState("")
     const [temp, setTemp] = useState("")
     const {enqueueSnackbar} = useSnackbar();
@@ -14,8 +14,8 @@ function RetaurantBody() {
     const performApiCall = async() => {
         try{
             const response = await axios.get(config.backendEndpoint);
-            const restaurantInfo = response.data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-            console.log(restaurantInfo)
+            const restaurantInfo = response.data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            console.log(response)
             setRestaurantData(restaurantInfo);
             setfilteredRestautandData(restaurantInfo);
         }catch(error){
@@ -48,7 +48,7 @@ function RetaurantBody() {
     </div>
     <div className="restaurant-body">
     
-        {filteredRestautandData == undefined ?  (null) : (filteredRestautandData.map((restaurant,idx) => {
+        {filteredRestautandData == undefined ?  (null) :(filteredRestautandData.map((restaurant,idx) => {
             return <RestaurantCard key={idx} prop = {...restaurant.info} />
         }))}
     </div>
@@ -56,4 +56,4 @@ function RetaurantBody() {
   )
 }
 
-export default RetaurantBody
+export default RestaurantBody
