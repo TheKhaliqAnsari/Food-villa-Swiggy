@@ -14,7 +14,7 @@ function RestaurantBody() {
     const performApiCall = async() => {
         try{
             const response = await axios.get(config.backendEndpoint);
-            const restaurantInfo = response.data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            const restaurantInfo = response.data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             console.log(response)
             setRestaurantData(restaurantInfo);
             setfilteredRestautandData(restaurantInfo);

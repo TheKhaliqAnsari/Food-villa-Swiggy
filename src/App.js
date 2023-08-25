@@ -5,7 +5,7 @@ import RestaurantBody from "./components/RestaurantBody";
 import About from "./components/About";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
-
+import ProfileClass from "./components/ProfileClass";
 import RestaurantMenu from "./components/RestaurantMenu";
 
 import { SnackbarProvider } from "notistack";
@@ -35,13 +35,19 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <About />,
+        children:[
+          {
+            path:'profile',
+            element:<ProfileClass/>
+          }
+        ]
       },
       {
         path: "/restaurant-menu/:id",
         element: <RestaurantMenu />,
       },
     ],
-  },
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

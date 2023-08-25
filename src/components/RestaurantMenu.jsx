@@ -51,7 +51,7 @@ const RestaurantMenu = () => {
         <h1>{restaurantInfo.name}</h1>
         <h4>{restaurantInfo.costForTwoMessage}</h4>
         <h4>{restaurantInfo.totalRatingsString}</h4>
-        <h2>Your id is: {id}</h2>
+        <h2>Retaurant Id: {id}</h2>
       </div>
       <div>
         {/* {console.log(restaurantMenu[0].card.info.name)} */}

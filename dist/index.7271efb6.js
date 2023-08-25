@@ -2957,6 +2957,8 @@ var _error = require("./components/Error");
 var _errorDefault = parcelHelpers.interopDefault(_error);
 var _footer = require("./components/Footer");
 var _footerDefault = parcelHelpers.interopDefault(_footer);
+var _profileClass = require("./components/ProfileClass");
+var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
 var _restaurantMenu = require("./components/RestaurantMenu");
 var _restaurantMenuDefault = parcelHelpers.interopDefault(_restaurantMenu);
 var _notistack = require("notistack");
@@ -3011,13 +3013,23 @@ const router = (0, _reactRouterDom.createBrowserRouter)([
                     fileName: "src/App.js",
                     lineNumber: 37,
                     columnNumber: 18
-                }, undefined)
+                }, undefined),
+                children: [
+                    {
+                        path: "profile",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {}, void 0, false, {
+                            fileName: "src/App.js",
+                            lineNumber: 41,
+                            columnNumber: 21
+                        }, undefined)
+                    }
+                ]
             },
             {
                 path: "/restaurant-menu/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 41,
+                    lineNumber: 47,
                     columnNumber: 18
                 }, undefined)
             }
@@ -3030,12 +3042,12 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _notistack.SnackbarProv
         router: router
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 50,
+        lineNumber: 56,
         columnNumber: 5
     }, undefined)
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 49,
+    lineNumber: 55,
     columnNumber: 3
 }, undefined));
 var _c;
@@ -3046,7 +3058,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Header":"knC38","./components/About":"hkKyJ","./components/Error":"cKXa2","./components/RestaurantBody":"iXz94","./components/Footer":"2OVeV","./components/RestaurantMenu":"ixexi","notistack":"dkWta","react-router-dom":"9xmpe"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Header":"knC38","./components/About":"hkKyJ","./components/Error":"cKXa2","./components/RestaurantBody":"iXz94","./components/Footer":"2OVeV","./components/RestaurantMenu":"ixexi","notistack":"dkWta","react-router-dom":"9xmpe","./components/ProfileClass":"72CRz"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -33373,32 +33385,140 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-            children: "This is about me hehehehehe \uD83D\uDE05\uD83D\uDE05\uD83D\uDE05\uD83D\uDE05"
-        }, void 0, false, {
+var _reactRouterDom = require("react-router-dom");
+var _profileClass = require("./ProfileClass");
+var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
+var _react = require("react");
+class About extends (0, _react.Component) {
+    constructor(props){
+        super(props);
+        console.log("inside the about constructor");
+    }
+    componentDidMount() {
+        console.log("about component did mount");
+    }
+    render() {
+        console.log("inside the about render");
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "About Us page"
+                }, void 0, false, {
+                    fileName: "src/components/About.jsx",
+                    lineNumber: 18,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {}, void 0, false, {
+                    fileName: "src/components/About.jsx",
+                    lineNumber: 19,
+                    columnNumber: 13
+                }, this)
+            ]
+        }, void 0, true, {
             fileName: "src/components/About.jsx",
-            lineNumber: 6,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/About.jsx",
-        lineNumber: 5,
-        columnNumber: 9
-    }, undefined);
-};
-_c = About;
+            lineNumber: 17,
+            columnNumber: 9
+        }, this);
+    }
+}
 exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
 
   $parcel$ReactRefreshHelpers$42ed.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cKXa2":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","./ProfileClass":"72CRz","react":"21dqq","react/jsx-dev-runtime":"iTorj"}],"72CRz":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e0b6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e0b6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+class ProfileClass extends (0, _react.Component) {
+    constructor(props){
+        super(props);
+        this.state = {
+            userInfo: {
+                name: "khaliq ansari",
+                location: "London",
+                username: "ansarikhaliq"
+            }
+        };
+        console.log("inside profile constructor");
+    }
+    async componentDidMount() {
+        const res = await fetch("https://api.github.com/users/thekhaliqansari");
+        const json = await res.json();
+        console.log(json);
+        this.setState({
+            userInfo: json
+        });
+        console.log("inside profile componet did mount");
+    }
+    render() {
+        console.log("inside profile Render");
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "Class based component - Profile"
+                }, void 0, false, {
+                    fileName: "src/components/ProfileClass.jsx",
+                    lineNumber: 31,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
+                    children: [
+                        "Name: ",
+                        this.state.userInfo.name
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/ProfileClass.jsx",
+                    lineNumber: 32,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
+                    children: [
+                        "location: ",
+                        this.state.userInfo.location
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/ProfileClass.jsx",
+                    lineNumber: 33,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
+                    children: [
+                        "username: ",
+                        this.state.userInfo.login
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/ProfileClass.jsx",
+                    lineNumber: 34,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/ProfileClass.jsx",
+            lineNumber: 30,
+            columnNumber: 7
+        }, this);
+    }
+}
+exports.default = ProfileClass;
+
+  $parcel$ReactRefreshHelpers$e0b6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","react-router-dom":"9xmpe"}],"cKXa2":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1609 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -33482,7 +33602,7 @@ function RestaurantBody() {
     const performApiCall = async ()=>{
         try {
             const response = await (0, _axiosDefault.default).get((0, _constants.config).backendEndpoint);
-            const restaurantInfo = response.data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            const restaurantInfo = response.data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             console.log(response);
             setRestaurantData(restaurantInfo);
             setfilteredRestautandData(restaurantInfo);
@@ -39644,7 +39764,7 @@ const RestaurantMenu = ()=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                         children: [
-                            "Your id is: ",
+                            "Retaurant Id: ",
                             id
                         ]
                     }, void 0, true, {
