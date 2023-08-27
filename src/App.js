@@ -2,15 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import RestaurantBody from "./components/RestaurantBody";
-import About from "./components/About";
+// import About from "./components/About";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
 import ProfileClass from "./components/ProfileClass";
 import RestaurantMenu from "./components/RestaurantMenu";
+import { lazy, Suspense } from "react";
 
 import { SnackbarProvider } from "notistack";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
+const About = lazy(() => import('./components/About'))
 const App = () => {
   return (
     <>
@@ -34,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about-us",
-        element: <About />,
+        element: <Suspense><About/></Suspense>,
         children:[
           {
             path:'profile',
