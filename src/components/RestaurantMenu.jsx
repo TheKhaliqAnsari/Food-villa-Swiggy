@@ -4,43 +4,21 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import axios from "axios";
 import "../../index.css";
+import useRestaurant from "../hooks/useRetaurant";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
-  const [restaurantInfo, setRestuarantInfo] = useState({});
-  const [restaurantMenu, setRestaurantMenu] = useState([]);
-  const url = config.restaurantMenuURL + id;
+  const [restaurantInfo, restaurantMenu] = useRestaurant(id);
+  // If i want to use state than i need to use useState like this ->
+  // useEffect(() => {
+  //   setRestuarantInfo(data1);
+  //   setRestaurantMenu(data2);
+  // }, [data1, data2]);
 
-  const performApiCall = async () => {
-    try {
-      const res = await axios.get(url);
-      // const data = await res.json()
-      // console.log(res.data?.data?.cards);
-      const restInfo = res.data?.data?.cards[0]?.card?.card?.info;
-      const restMenu =
-        res.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]
-          ?.card.card.itemCards;
-          console.log(restMenu)
-      //   setRestaurantMenu(
-      //     res.data.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card
-      //       .card.itemCards
-      //   );
-      return [restInfo, restMenu];
-      // setRestuarantInfo(res.data?.data?.cards[0]?.card?.card?.info);;
+  //Else my component will go inside infinite re-render
+  
 
-      // const { name, costForTwoMessage, cloudinaryImageId, totalRatingsString} = restaurantInfo
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    performApiCall().then((val) => {
-      setRestuarantInfo(val[0]);
-      setRestaurantMenu(val[1])
-    });
-  }, []);
-  return restaurantInfo == undefined ? (
+  return !restaurantInfo ? (
     <Shimmer />
   ) : (
     <div className="menu-container">
