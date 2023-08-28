@@ -9,6 +9,7 @@ function Header() {
       <li>Home</li>
       <li>Cart</li>
       <Link to="/about-us"><li >About Us</li> </Link>
+      <Link to="/instamart"><li >Instamart</li> </Link>
       <li>login</li>
     </ul>
   </div>;

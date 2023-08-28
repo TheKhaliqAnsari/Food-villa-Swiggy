@@ -7,6 +7,7 @@ import Error from "./components/Error";
 import Footer from "./components/Footer";
 import ProfileClass from "./components/ProfileClass";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Instamart from "./components/Instamart";
 import { lazy, Suspense } from "react";
 
 import { SnackbarProvider } from "notistack";
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
         path: "/restaurant-menu/:id",
         element: <RestaurantMenu />,
       },
+      {
+        path:"/instamart",
+        element:<Instamart/>
+      }
     ],
   }
 ]);
