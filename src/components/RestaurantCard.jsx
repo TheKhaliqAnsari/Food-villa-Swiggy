@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { config } from "../constants";
+import UserContext from "../utils/UserContext";
 
 function RestaurantCard({ prop }) {
   const { name, avgRatingString, cuisines, locality, cloudinaryImageId, id } = prop;
+  const {user } = useContext(UserContext)
   return (
     <Link to={"/restaurant-menu/"+id}>
       <div className="restaurant-card-container">
@@ -15,6 +17,7 @@ function RestaurantCard({ prop }) {
         <h5>{avgRatingString} Stars</h5>
         <h4>{cuisines.join(", ")}</h4>
         <p>{locality}</p>
+        <p>{user.name}</p>
       </div>
      </Link>
   );

@@ -28,6 +28,7 @@ li{
     flex-direction: column;
     padding: 10px;
     flex-wrap: wrap;
+    
 }
 .restaurant-card-container img{
     width: 100%;
@@ -53,3 +54,4 @@ li{
 .menu-container img{
     width: 80%;
 }
+

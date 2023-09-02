@@ -1,9 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { config } from "../constants";
 import axios from "axios";
 import { enqueueSnackbar, useSnackbar } from "notistack";
 import { handleSearch } from "../utils/helper";
+import UserContext from "../utils/UserContext";
 
 function RestaurantBody() {
   const [restaurantData, setRestaurantData] = useState([]);
@@ -11,6 +12,7 @@ function RestaurantBody() {
   const [search, setSearch] = useState("");
   const [temp, setTemp] = useState("");
   const { enqueueSnackbar } = useSnackbar();
+  const {user, setUser} = useContext(UserContext)
 
   const performApiCall = async () => {
     try {
@@ -26,19 +28,6 @@ function RestaurantBody() {
       enqueueSnackbar(error, { variant: "warning" });
     }
   };
-
-  //Created code into the helper function for this
-  // const handleSearch = () => {
-  //     if(search.trim() === ""){
-  //         setfilteredRestautandData(restaurantData)
-  //     }else{
-  //         const filterData =  filteredRestautandData.filter((ele) => {
-  //         return ele.info.name.toLowerCase().includes(search.toLowerCase())
-  //     })
-  //     console.log(filterData)
-  //     setfilteredRestautandData(filterData)
-  //     }
-  // }
 
   useEffect(() => {
     performApiCall();
@@ -65,6 +54,7 @@ function RestaurantBody() {
         >
           Search
         </button>
+        <input value={user.name} onChange={(e) => setUser( {name:e.target.value}) }/>
       </div>
       <div className="restaurant-body">
         {filteredRestautandData == undefined
