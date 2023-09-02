@@ -17,8 +17,8 @@ function Header() {
   return <div className="nav-bar">
     <Link to='/'><img src="https://lh3.googleusercontent.com/p/AF1QipOhHeCaQ6Xb6RVf3R_ZBTbDK4FIug_203rKsHLT=w1080-h608-p-no-v0" alt="logo" /></Link>
     <ul>
-      <li>Home</li>
-      <li onClick={() => dispatch(addItem("khaliq"))}>Cart - {cart.length}</li>
+      <Link to='/'><li>Home</li></Link>
+      <Link to='/cart'><li>Cart - {cart.length}</li></Link>
       <Link to="/about-us"><li >About Us</li> </Link>
       <Link to="/instamart"><li >Instamart</li> </Link>
       <li onClick={() => dispatch(clearItem())}>login</li>

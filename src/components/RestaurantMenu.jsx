@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import { config } from "../constants";
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-import axios from "axios";
 import "../../index.css";
 import useRestaurant from "../hooks/useRetaurant";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -16,7 +16,11 @@ const RestaurantMenu = () => {
   // }, [data1, data2]);
 
   //Else my component will go inside infinite re-render
-  
+  const dispatch = useDispatch();
+  const handleAddToCart =(item) => {
+    console.log(item)
+    dispatch(addItem(item))
+  }
 
   return !restaurantInfo ? (
     <Shimmer />
@@ -37,8 +41,17 @@ const RestaurantMenu = () => {
         {/* {restaurantMenu.map((info ,idx) => {
             return <li key={idx}>{info}</li>
         })} */}
-        {restaurantMenu == undefined ? <Shimmer/> : (
-            restaurantMenu.map((info,idx) => <li key={idx}>{info.card.info.name} {" --->"} {((info.card.info.price)/100)  || ((info.card.info.defaultPrice)/100) + " rs" } </li>)
+        {restaurantMenu == undefined ? (
+          <Shimmer />
+        ) : (
+          restaurantMenu.map((info, idx) => (
+            <li key={idx}>
+              {info.card.info.name} {" --->"}
+              {info.card.info.price / 100 ||
+                info.card.info.defaultPrice / 100 + " rs"}
+            <button onClick={() => handleAddToCart(info.card.info)} style={{margin:'20px', padding:'7px', backgroundColor:'black', color:'white'}}>Add Item</button>
+            </li>
+          ))
         )}
       </div>
     </div>

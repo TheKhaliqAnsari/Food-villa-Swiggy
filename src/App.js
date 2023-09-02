@@ -14,6 +14,7 @@ import { SnackbarProvider } from "notistack";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import store from "./utils/store";
+import Cart from "./components/Cart";
 
 const About = lazy(() => import("./components/About"));
 
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
         path: "/instamart",
         element: <Instamart />,
       },
+      {
+        path:'/cart',
+        element: <Cart/>
+      }
     ],
   },
 ]);
