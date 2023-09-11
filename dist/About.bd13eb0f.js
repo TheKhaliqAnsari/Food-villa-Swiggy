@@ -601,14 +601,20 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$42ed.prelude(module);
 
 try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-var _profileClass = require("./ProfileClass");
-var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
-var _react = require("react");
-class About extends (0, _react.Component) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _reactRouterDom = require("c0522ae48f8d9cb5");
+var _ProfileClass = _interopRequireDefault(require("b8a02a19a51258a4"));
+var _react = require("d51be11541d677f2");
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+class About extends _react.Component {
     constructor(props){
         super(props);
         console.log("inside the about constructor");
@@ -618,35 +624,17 @@ class About extends (0, _react.Component) {
     }
     render() {
         console.log("inside the about render");
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    children: "About Us page"
-                }, void 0, false, {
-                    fileName: "src/components/About.jsx",
-                    lineNumber: 18,
-                    columnNumber: 13
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {}, void 0, false, {
-                    fileName: "src/components/About.jsx",
-                    lineNumber: 19,
-                    columnNumber: 13
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/About.jsx",
-            lineNumber: 17,
-            columnNumber: 9
-        }, this);
+        return /*#__PURE__*/ React.createElement("div", null, /*#__PURE__*/ React.createElement("h1", null, "About Us page"), /*#__PURE__*/ React.createElement(_ProfileClass.default, null));
     }
 }
-exports.default = About;
+var _default = About;
+exports.default = _default;
 
   $parcel$ReactRefreshHelpers$42ed.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","./ProfileClass":"72CRz","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["jnwLs","1xC6H"], null, "parcelRequirea193")
+},{"@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","c0522ae48f8d9cb5":"9xmpe","b8a02a19a51258a4":"72CRz","d51be11541d677f2":"21dqq"}]},["jnwLs","1xC6H"], null, "parcelRequirea193")
 
 //# sourceMappingURL=About.bd13eb0f.js.map

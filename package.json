@@ -10,6 +10,7 @@
   "author": "Khaliq Ansari",
   "license": "ISC",
   "dependencies": {
+    "@parcel/transformer-babel": "^2.9.3",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "notistack": "^3.0.1",
@@ -19,7 +20,14 @@
     "react-router-dom": "^6.15.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.17",
+    "@babel/preset-env": "^7.22.15",
+    "@babel/preset-react": "^7.22.15",
+    "@testing-library/react": "^14.0.0",
+    "babel-jest": "^29.6.4",
     "buffer": "^6.0.3",
+    "jest": "^29.6.4",
+    "jest-environment-jsdom": "^29.6.4",
     "parcel": "^2.9.3",
     "process": "^0.11.10"
   }

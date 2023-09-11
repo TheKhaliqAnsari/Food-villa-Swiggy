@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { config } from "../constants";
 import UserContext from "../utils/UserContext";
 
-function RestaurantCard({ prop }) {
-  const { name, avgRatingString, cuisines, locality, cloudinaryImageId, id } = prop;
+function RestaurantCard({ info }) {
+  const { name, avgRatingString, cuisines, locality, cloudinaryImageId, id } = info;
   const {user } = useContext(UserContext)
   return (
     <Link to={"/restaurant-menu/"+id}>

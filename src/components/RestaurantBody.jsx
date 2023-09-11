@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { config } from "../constants";
 import axios from "axios";
 import { enqueueSnackbar, useSnackbar } from "notistack";
@@ -18,7 +18,7 @@ function RestaurantBody() {
     try {
       const response = await axios.get(config.backendEndpoint);
       const restaurantInfo =
-        response.data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        response.data?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
       console.log(response);
       setRestaurantData(restaurantInfo);
@@ -60,7 +60,7 @@ function RestaurantBody() {
         {filteredRestautandData == undefined
           ? null
           : filteredRestautandData.map((restaurant, idx) => {
-              return <RestaurantCard key={idx} prop={...restaurant.info} />;
+              return <RestaurantCard key={idx} info={{...restaurant.info}} />;
             })}
       </div>
     </>
